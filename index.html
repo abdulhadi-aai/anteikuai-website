@@ -163,28 +163,6 @@
             text-decoration: none;
         }
 
-        form {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            text-align: left;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 18px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
         .btn {
             display: inline-block;
             padding: 18px 50px;
@@ -239,13 +217,6 @@
             margin-bottom: 20px;
             font-size: 0.8rem;
             letter-spacing: 1px;
-        }
-
-        #form-status {
-            margin-top: 20px;
-            color: var(--accent);
-            font-family: 'Cinzel', serif;
-            display: none;
         }
 
         @media (max-width: 768px) {
@@ -312,14 +283,30 @@
             Email: <a href="mailto:ahmad.adil@anteikuai.com">ahmad.adil@anteikuai.com</a> | 
             Tel: <a href="tel:07771981149">07771981149</a>
         </div>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Full Name" required>
-            <input type="text" id="company" placeholder="Company Name" required>
-            <input type="email" id="email" placeholder="Professional Email Address" required>
-            <textarea id="message" placeholder="How can we assist your workflow?" rows="5" required></textarea>
-            <button type="submit" class="btn">Send Request</button>
-        </form>
-        <div id="form-status">Thank you. A representative will reach out shortly.</div>
+        
+        <!-- GoHighLevel Form Module -->
+        <iframe
+            src="https://api.leadconnectorhq.com/widget/form/hoSH6JLOa9wGRo0ojjoI"
+            style="width:100%;height:100%;border:none;border-radius:8px"
+            id="inline-hoSH6JLOa9wGRo0ojjoI" 
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="AnteikuAI - Form"
+            data-height="603"
+            data-layout-iframe-id="inline-hoSH6JLOa9wGRo0ojjoI"
+            data-form-id="hoSH6JLOa9wGRo0ojjoI"
+            title="AnteikuAI - Form"
+            
+                >
+        </iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        <!-- End GoHighLevel Form Module -->
+        
     </section>
 
     <footer>
@@ -341,26 +328,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const company = document.getElementById('company').value;
-            const msg = document.getElementById('message').value;
-            
-            // Simulating form submission
-            this.style.opacity = '0';
-            setTimeout(() => {
-                this.style.display = 'none';
-                document.getElementById('form-status').style.display = 'block';
-            }, 300);
-
-            // Optional: Triggers a mailto as a fallback action
-            console.log(`Inquiry logged for ${company} by ${name}`);
-        });
-    </script>
 
 </body>
 </html>
