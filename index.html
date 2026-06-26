@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anteiku AI | Professional Management Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0d0d0d;
+            --surface: #141414;
+            --accent: #d4af37;
+            --text: #ffffff;
+            --text-dim: #b0b0b0;
+            --border: #333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        nav { padding: 60px 20px 20px; display: flex; justify-content: center; }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            letter-spacing: 6px;
+            color: var(--accent);
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        header { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 50px;
+            font-weight: 400;
+        }
+
+        .grid-container {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 25px;
+        }
+
+        .box {
+            background: var(--surface);
+            padding: 50px 30px;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .box:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+        .box h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .box p { font-size: 1rem; color: var(--text-dim); max-width: 300px; margin: 0 auto; }
+
+        .stats {
+            background: #111;
+            padding: 80px 20px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); }
+
+        .stat-item span {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .stat-item label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .contact-section { padding: 100px 20px; max-width: 600px; margin: 0 auto; }
+
+        .contact-section h2 { font-family: 'Cinzel', serif; margin-bottom: 15px; color: #fff; font-size: 2rem; }
+
+        .contact-info-top { margin-bottom: 40px; color: var(--text-dim); font-size: 0.95rem; }
+
+        .contact-info-top a { color: var(--accent); text-decoration: none; }
+
+        form { display: grid; grid-template-columns: 1fr; gap: 15px; text-align: left; }
+
+        input, textarea {
+            width: 100%;
+            padding: 18px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus { outline: none; border-color: var(--accent); }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .btn:hover { background: var(--accent); color: var(--bg); }
+
+        footer {
+            padding: 80px 20px;
+            border-top: 1px solid var(--border);
+            background: #080808;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .footer-content { max-width: 1000px; margin: 0 auto; }
+
+        .footer-links { margin-bottom: 25px; }
+
+        .footer-links a { color: var(--text); text-decoration: none; margin: 0 15px; transition: color 0.3s; }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        .company-info { line-height: 2; margin-bottom: 20px; font-size: 0.8rem; letter-spacing: 1px; }
+
+        #form-status { margin-top: 20px; color: var(--accent); font-family: 'Cinzel', serif; display: none; }
+
+        @media (max-width: 768px) {
+            .grid-container, .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-links a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Anteiku AI</div>
+    </nav>
+
+    <header>
+        <h1>A Steady Foundation for Your Business</h1>
+        <p class="subtitle">Automated management systems that handle daily operations, allowing professional builders to remain focused on the project at hand.</p>
+        <a href="#inquiry" class="btn">Inquire Within</a>
+    </header>
+
+    <section class="grid-container">
+        <div class="box">
+            <h2>Call Management</h2>
+            <p>Our systems handle inbound inquiries with professional clarity, vetting calls so you only handle the essentials.</p>
+        </div>
+        <div class="box">
+            <h2>Unified Messaging</h2>
+            <p>Monitor emails and messages across platforms with automated responses that ensure your clients never feel overlooked.</p>
+        </div>
+        <div class="box">
+            <h2>Reputation Growth</h2>
+            <p>Automated follow-ups that turn completed projects into the 5-star reviews your business deserves.</p>
+        </div>
+        <div class="box">
+            <h2>Smart Booking</h2>
+            <p>Integrate with your calendar to schedule site visits and meetings automatically, without the back-and-forth.</p>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span>35%</span>
+                <label>Booking Increase</label>
+            </div>
+            <div class="stat-item">
+                <span>24/7</span>
+                <label>System Uptime</label>
+            </div>
+            <div class="stat-item">
+                <span>100%</span>
+                <label>AI Driven</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="inquiry">
+        <h2>Submit an Inquiry</h2>
+        <div class="contact-info-top">
+            Email: <a href="mailto:ahmad.adil@anteikuai.com">ahmad.adil@anteikuai.com</a> | 
+            Tel: <a href="tel:07771981149">07771981149</a>
+        </div>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="company" placeholder="Company Name" required>
+            <input type="email" id="email" placeholder="Professional Email Address" required>
+            <textarea id="message" placeholder="How can we assist your workflow?" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Request</button>
+        </form>
+        <div id="form-status">Thank you. A representative will reach out shortly.</div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="terms">Terms of Service</a>
+                <a href="privacy">Privacy Policy</a>
+                <a href="refunds">Refund & Cancellation Policy</a>
+            </div>
+            
+            <div class="company-info">
+                <strong>AnteikuAI Ltd.</strong> Registered in England & Wales.<br>
+                Company No: 17206065 | Registered Office: 12 Glanmor Road<br>
+                Support: ahmad.adil@anteikuai.com | Phone: 07771981149
+            </div>
+
+            <div style="letter-spacing: 2px; font-size: 0.7rem; color: #555;">
+                &copy; 2026 ANTEIKUAI.COM | ALL RIGHTS RESERVED
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const msg = document.getElementById('message').value;
+            const btn = this.querySelector('button');
+
+            btn.textContent = 'Transmitting...';
+
+            // Fires directly to your inbox via free FormSubmit AJAX gateway
+            fetch("https://formsubmit.co/ajax/ahmad.adil@anteikuai.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: `🔥 New Lead Inquiry: ${company}`,
+                    Name: name,
+                    Company: company,
+                    Email: email,
+                    Workflow_Request: msg
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                this.style.opacity = '0';
+                setTimeout(() => {
+                    this.style.display = 'none';
+                    document.getElementById('form-status').style.display = 'block';
+                }, 300);
+            })
+            .catch(error => {
+                btn.textContent = 'System Busy - Email Directly';
+            });
+        });
+    </script>
+
+</body>
+</html>
